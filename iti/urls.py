@@ -16,14 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
-from student.views import handle_hello_request , handle_hi_request
-from course.views import show_course
 urlpatterns = [
     # 127.0.0.1:8000/admin
     path('admin/', admin.site.urls),
-    # 127.0.0.1:8000/hello
-    path("hello" ,handle_hello_request ),
-    path('hi', handle_hi_request),
-    #127.0.0.1:8000/course
-    path('course/' ,include("course.urls") )
+    #127.0.0.1:8000/course/
+    path('course/' ,include("course.urls") ),
+    #127.0.0.1:8000/student/
+    path('student/' ,include("student.urls") ),
 ]

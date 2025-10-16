@@ -7,3 +7,7 @@ def show_course(request , code):
     return HttpResponse (f"<h1> Course code {code} </h1>")
 def course_name(request , name):
     return HttpResponse (f"<h1> Course name {name} </h1>")
+
+
+def course_index(request):
+    return render(request ,"course/index.html"  )

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block css %}
+<link rel="stylesheet" href="{% static 'course/css/style.css'%}">
+{% endblock %}
+{% block sidebar %}
+<div>SIDE BAR</div>
+{% endblock %}
+{% block content %}
+    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tenetur beatae doloribus labore cumque. Rerum deserunt vitae sed hic exercitationem.</p>
+    Student Index Page
+    {% if Name %}
+    <h1 style="color: red;">Name : {{Name|capfirst}} </h1>
+    {% endif %}
+    <h1>Age : {{Age}} </h1>
+    {% if Notdefinedkey %}
+      <h1>Not defined key : {{Notdefinedkey|default:'not defined'}} </h1>
+    {% endif %}
+{% endblock %}
