@@ -8,4 +8,5 @@ urlpatterns = [
     path ('student_index' , student_index , name='student_index'),
     path ('student_global' , student_global),
     path ('custom_page' , custom_page),
+    path ('' , students),
 ]

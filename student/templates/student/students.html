@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% for student in students %}
+<div class="card" style="width: 18rem;">
+    <!-- <img src="/media/{{student.img}}" class="card-img-top" alt="..."> -->
+     {% if student.img %}
+    <img src="{{student.img.url}}" class="card-img-top" alt="...">
+    {% else %}
+    <img src="{% static 'images/download.jpeg' %}" class="card-img-top" alt="...">
+    {% endif %}
+    <div class="card-body">
+      <p class="card-text">{{student.name}}</p>
+      <p class="card-text">{{student.faculty}}</p>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
