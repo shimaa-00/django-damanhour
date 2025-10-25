@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Student Name {{student.name}}</h1>
+<h1>Student Age {{student.age}}</h1>
+<h1>Student Gpa {{student.gpa}}</h1>
+<!-- <img src="/media/{{student.img}}" alt="" srcset="" style="width: 200px;"> -->
+ {% if student.img %}
+<img src="{{student.img.url}}" alt="" srcset="" style="width: 200px;">
+{%else%}
+<img src="{% static 'images/download.jpeg'%}" alt="" srcset="" style="width: 200px;">
+{% endif %}
+<a href="{% url 'students'%}"> students </a>
+
+{% endblock %}

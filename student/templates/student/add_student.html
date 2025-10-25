@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block content %}
+{% for error in errors %}
+<h1 style=" color: red;"> {{error}}</h1>
+{% endfor %}
+<form  method = "post" enctype="multipart/form-data">
+    {% csrf_token %}
+<label for="">Name </label><input type="text" name="name" id=""  required> </br>
+<label for="">Age </label><input type="text" name="age" id="" ></br>
+<label for="">Gpa </label><input type="number" name="gba" id="" min="1.5"></br>
+<label for="">Faculty </label><input type="text" name="faculty" id="" ></br>
+<label for="">Succeded_or_not </label> <input type="checkbox" name="status" id=""> </br>
+<label for="">Gender</label> <input type="radio" name="gender" value="male" id="gender"> <b>Male</b>
+<input type="radio" name="gender" value="female" id="gender">  <b>Female</b></br>
+<input type="file" name="image" id=""> <br>
+<input type="submit" value="Add">
+</form>
+{% endblock %}

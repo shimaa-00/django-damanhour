@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% if error %}
+<h1 style="color:  red;"> {{error}}</h1>
+{% endif%}
 {% for student in students %}
+
 <div class="card" style="width: 18rem;">
     <!-- <img src="/media/{{student.img}}" class="card-img-top" alt="..."> -->
      {% if student.img %}
@@ -12,7 +16,9 @@
     <div class="card-body">
       <p class="card-text">{{student.name}}</p>
       <p class="card-text">{{student.faculty}}</p>
-    </div>
+<a href="{% url 'student_details' student.id  %}">Show_details </a>    
+<a href="{% url 'student_delete' student.id  %}">Delete </a>    
+</div>
   </div>
 {% endfor %}
 
